@@ -1,0 +1,50 @@
+arch换源
+https://mirror.tuna.tsinghua.edu.cn/help/archlinux/
+
+kate /etc/pacman.d/mirrorlist
+
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+
+
+https://mirror.tuna.tsinghua.edu.cn/help/archlinuxcn/
+
+kate /etc/pacman.conf
+
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+
+sudo pacman -Sy archlinuxcn-keyring
+
+中文化
+kate /etc/locale.gen
+
+sudo locale-gen
+
+sudo pacman -Sy wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts noto-fonts-cjk
+
+reboot
+
+安装yay
+sudo pacman -S yay
+
+yay
+
+输入法
+yay -S manjaro-asian-input-support-fcitx5 fcitx5 fcitx5-configtool fcitx5-chinese-addons fcitx5-qt fcitx5-gtk
+
+reboot
+
+安装google
+yay google-chrome
+
+安装zsh
+yay zsh
+
+oh my zsh安装
+sh -c "$(curl -fsSL https://install.ohmyz.sh)"
+
+zsh三放插件
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+ neofetch
+
